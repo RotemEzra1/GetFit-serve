@@ -2,6 +2,7 @@ require("./db");
 
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 const cors = require("cors");
 app.use(cors());
@@ -30,4 +31,4 @@ app.all('*',(req,res) => {
     res.send("Page not found");
 });
 
-app.listen(3005);
+app.listen(process.env.PORT || 3000, () => console.log(`Express server is running on port ${PORT}`));
